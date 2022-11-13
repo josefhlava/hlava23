@@ -5,15 +5,18 @@ import Footer from './Components/Footer/Footer';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 
 function App() {
-  let languageStoredInLocalStorage = localStorage.getItem("language");
+  let browserLanguage = navigator.language;
   let [language, setLanguage] = useState(
-    languageStoredInLocalStorage ? languageStoredInLocalStorage : "Czech"
+    browserLanguage === "cs" ? "cs" : "en"
   );
 
   return (
     <>
     <Router>
-      <Navbar />
+      <Navbar 
+        setLanguage={setLanguage}
+        language={language} />
+        <h1>{browserLanguage}</h1>
       <Routes>
         <Route path='/' exact />
       </Routes>
