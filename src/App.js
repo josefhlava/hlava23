@@ -16,7 +16,6 @@ function App() {
       <Navbar 
         setLanguage={setLanguage}
         language={language} />
-        <h1>{browserLanguage}</h1>
       <Routes>
         <Route path='/' exact />
       </Routes>
