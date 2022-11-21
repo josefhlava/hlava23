@@ -32,26 +32,34 @@ function Navbar({ language, setLanguage }) {
     <div>
       <nav className="navbar container">
         <h1>HLAVA23</h1>
-        <div className="menu">
-            <Link to='/uvod' className='nav-links' onClick={closeMobileMenu}>
-                {content.item1}
-            </Link>
-            <Link to='/kdy&kde' className='nav-links' onClick={closeMobileMenu}>                    {content.item2}
-            </Link>
-            <Link to='/dary' className='nav-links' onClick={closeMobileMenu}>
-                {content.item3}
-            </Link>
-            <Link to='/rsvp' className='nav-links' onClick={closeMobileMenu}>
-                {content.item4}
-            </Link>
-            <div onClick={handleLangClick}>
-                <img className='lang-logo' src={language === "cs" ? engLogo : czeLogo} alt="flag" />
-            </div>
+        <div className={click ? "menu is-active" : "menu"}>
+          <Link to="/uvod" className="nav-item" onClick={closeMobileMenu}>
+            {content.item1}
+          </Link>
+          <Link to="/kdy&kde" className="nav-item" onClick={closeMobileMenu}>
+            {content.item2}
+          </Link>
+          <Link to="/dary" className="nav-item" onClick={closeMobileMenu}>
+            {content.item3}
+          </Link>
+          <Link to="/rsvp" className="nav-item" onClick={closeMobileMenu}>
+            {content.item4}
+          </Link>
+          <div onClick={handleLangClick}>
+            <img
+              className="lang-logo"
+              src={language === "cs" ? engLogo : czeLogo}
+              alt="flag"
+            />
+          </div>
         </div>
-        <button className={click ? "hamburger" : "hamburger is-active"} onClick={handleClick}>
-            <span></span>
-            <span></span>
-            <span></span>
+        <button
+          className={click ? "hamburger is-active nav-menu active" : "hamburger nav-menu"}
+          onClick={handleClick}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
         </button>
         {/* <div className='navbar-container'>
                     <Link to="/" className="navbar-logo">
